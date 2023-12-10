@@ -4,8 +4,13 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import {cart} from "../store/cartSlice"
 
 function NavBar() {
+
+  const cartProducts = useSelector(cart)
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
@@ -21,7 +26,7 @@ function NavBar() {
               Products
             </Nav.Link>
             <Nav.Link to="/cart" as={Link}>
-              My Cart 0
+              My Cart {cartProducts.length}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

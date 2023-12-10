@@ -1,8 +1,8 @@
-import Product from "./Product";
+import Products from "./Products";
 function Dashboard() {
   return (
     <>
-      <Product />
+     <Products/>
     </>
   );
 }

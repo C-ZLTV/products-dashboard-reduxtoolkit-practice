@@ -39,7 +39,7 @@ Store ---> vieve configurato con la funzione configureStore che prendere un ogge
 ------------------------
 React Redux - funziona con redux toolkit e lo completa
 
-Per rednere disponibile lo stato di redux a tutti i componenti bisogna avvolgere i componenti con <Provider>
+Per rendere disponibile lo stato di redux a tutti i componenti bisogna avvolgere i componenti con <Provider> (dentro il rounting)
 
 Per recuperere lo stato - useSelect()
 Per modificare lo stato - useDispatch() 

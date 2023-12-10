@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
-import Product from "./components/Product";
 import {
   createBrowserRouter,
   createRoutesFromElements,
