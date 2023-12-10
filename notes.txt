@@ -1,0 +1,48 @@
+Redux  
+
+Store --> global state accessibile a tutti i componenti dell’app. Uno store comprende molteplici Slice e Reducer, ogni uno responsabile di una certa parte dell’app 
+
+Reducer --> funzione che riceve state e action e decide come aggiornare lo stato (STATO IMMUTABLE, COPIARE OGGETTI E POI MUTARE) 
+
+Action --> è un oggetto con un type per definire il nome dell’azione e payload per mandare data assieme all’azione 
+
+Action creator --> una funzione che crea e returna un action object!!!
+
+State --> lo stato da aggionare o leggere
+
+Selector --> funzioni che estraggono informazioni specifiche (varibili degli stati)
+
+
+Store methods: 
+
+dispath to change state 
+
+get state to get state 
+
+**Per passare uno nuovo stato allo Store bisogna fare DISPATCH per recuperere un stato bsigna fare SELECT
+
+-----------------------
+Redux Toolkit
+
+Invece di create l'action, action creator e lo switch dentro il reducer viene creato uno Slice
+
+Slice --> è un una funzione de prende un oggetto oggetto con:
+1.nome
+2.stati iniziale
+3.oggetto reducers --> con la creazione dei reducer vengono autmaticamaticamente e in sottofondo creati l'action e l'action creator; il nome di quest'ultimi è il nome che si è dato al reducer
+4.oggetto extrareducers
+
+Non è necessario modificare lo stato in modo immutabile dato che la librarie Immer.js si occupa di questo in sottofondo
+
+Store ---> vieve configurato con la funzione configureStore che prendere un oggetto con un solo valore reducers: {} dove devono essere definiti gli Slice 
+
+------------------------
+React Redux - funziona con redux toolkit e lo completa
+
+Per rednere disponibile lo stato di redux a tutti i componenti bisogna avvolgere i componenti con <Provider>
+
+Per recuperere lo stato - useSelect()
+Per modificare lo stato - useDispatch() 
+
+------------------------
+Redux DevTools - per il debug
