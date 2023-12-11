@@ -1,28 +1,27 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import { Product } from "./Product";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { products } from "../store/productSlice";
 import { add } from "../store/cartSlice";
+import { getProducts } from "../store/productSlice";
 
 function Products() {
-  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
+  const { data } = useSelector(products);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((data) => data.json())
-      .then((result) => setProducts(result));
+    dispatch(getProducts());
   }, []);
-
-  const dispatch = useDispatch();
 
   const addToCart = (product) => {
     //dispatch the action
     dispatch(add(product));
   };
 
-  const cards = products.map((product) => (
+  const cards = data.map((product) => (
     <Product
       key={product.id}
       image={product.image}

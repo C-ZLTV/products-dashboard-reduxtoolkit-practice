@@ -30,11 +30,16 @@ Slice --> è un una funzione de prende un oggetto oggetto con:
 1.nome
 2.stati iniziale
 3.oggetto reducers --> con la creazione dei reducer vengono autmaticamaticamente e in sottofondo creati l'action e l'action creator; il nome di quest'ultimi è il nome che si è dato al reducer
-4.oggetto extrareducers
+4.oggetto extraReducers
+
+Due modi per utilizzare extraReducers
+1. Maneggiare un azione dello sliceA all'interno dello sliceB
+2. Maneggiare i vari stati di una chiamata API, spesso utilizzata con createAsyncThunk
 
 Non è necessario modificare lo stato in modo immutabile dato che la librarie Immer.js si occupa di questo in sottofondo
 
 Store ---> vieve configurato con la funzione configureStore che prendere un oggetto con un solo valore reducers: {} dove devono essere definiti gli Slice 
+
 
 ------------------------
 React Redux - funziona con redux toolkit e lo completa
